@@ -1,0 +1,23 @@
+<div class="container">
+  <button type="button" class="btn btn-outline-dark" (click)="buttonClick('income')">Income</button>
+  <button type="button" class="btn btn-outline-dark" (click)="buttonClick('outcome')">Outcome</button>
+  <button type="button" class="btn btn-outline-dark" (click)="buttonClick('loan')">Loans</button>
+  <button type="button" class="btn btn-outline-dark" (click)="buttonClick('investment')">Investments</button>
+</div>
+<h3>{{ title }}</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of sortedPersons; index as i">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{person.name.first + ' ' + person.name.last}}</td>
+      <td>{{person.amount}}</td>
+    </tr>
+  </tbody>
+</table>
